@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="layout/plantilla :: cabeza">
+        <title>[[#{login.titulo}]]</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: encabezado"></header>
+        <section id="actions" class="py-4 mb-4 bg-light">
+            <div class="container">
+                <div class="row">
+                    <!--Se pueden agregar botones-->
+                </div>
+            </div>
+        </section>
+        <section id="login">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mx-auto">
+                        <div class="card">
+                            <form method="POST" th:action="@{/login}">                                    
+                                <div class="card-header">
+                                    <h4>[[#{login.titulo}]]</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="input-group input-group-lg">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroup-sizing-lg">
+                                                <i class="fas fa-user"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" th:placeholder="#{login.usuario}" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" name="username" id="username"/>
+                                    </div>
+                                    <div class="input-group input-group-lg">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroup-sizing-lg">
+                                                <i class="fas fa-key"></i>
+                                            </span>
+                                        </div>
+                                        <input type="password" class="form-control" th:placeholder="#{login.contraseña}" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" name="password" id="password"/>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <input type="submit" th:value="#{login.titulo}" class="btn btn-primary btn-block"/>
+                                </div>
+                            </form>                                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer th:replace="layout/plantilla :: pie"></footer>        
+    </body>
+</html>
